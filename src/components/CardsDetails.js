@@ -6,6 +6,7 @@ import { ADD, DLT, REMOVE } from "../redux/actions/actions";
 
 const CardsDetails = () => {
   const [data, setData] = useState([]);
+  
   const { id } = useParams();
 
   const history = useNavigate();
