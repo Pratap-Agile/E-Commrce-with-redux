@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { ADD } from "../redux/actions/actions";
 import CardsData from "./CardsData";
 import "./style.css";
+
 const Cards = (props) => {
   const [data, setData] = useState(CardsData);
 
