@@ -14,7 +14,7 @@ const Cards = (props) => {
   const send = (e) => {
     dispatch(ADD(e));
   };
-  
+
   return (
     <div className="container mt-3">
       <h2 className="text-center">Add to Cart Projects</h2>
@@ -22,7 +22,7 @@ const Cards = (props) => {
       <div className="row d-flex justify-content-center align-items-center">
         {data.map((element, key) => {
           return (
-            <>
+            <div key={element.id}>
               <Card
                 style={{ width: "22rem", border: "none" }}
                 className="mx-2 mt-4 card_style"
@@ -47,7 +47,7 @@ const Cards = (props) => {
                   </div>
                 </Card.Body>
               </Card>
-            </>
+            </div>
           );
         })}
       </div>

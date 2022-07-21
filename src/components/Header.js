@@ -90,9 +90,9 @@ const Header = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {getData.map((e) => {
+                  {getData.map((e, key) => {
                     return (
-                      <>
+                      <div key={e.id}>
                         <tr>
                           <td>
                             <NavLink to={`/cart/${e.id}`} onClick={handleClose}>
@@ -133,7 +133,7 @@ const Header = () => {
                             <i className="fas fa-trash largetrash"></i>
                           </td>
                         </tr>
-                      </>
+                      </div>
                     );
                   })}
                   <p className="text-center">Total : ₹ {price}</p>

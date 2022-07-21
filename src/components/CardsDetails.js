@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { ADD, DLT, REMOVE } from "../redux/actions/actions";
 
 const CardsDetails = () => {
@@ -47,13 +47,11 @@ const CardsDetails = () => {
         <h2 className="text-center">Items Details Page</h2>
         <section className="container mt-3">
           <div className="iteamsdetails">
-            {data.map((ele) => {
+            {data.map((ele, key) => {
               return (
-                <>
+                <div key={ele.id}>
                   <div className="items_img">
-                    {/* <NavLink to={`/cart/${e.id}`}> */}
                     <img src={ele.imgdata} alt="img" />
-                    {/* </NavLink> */}
                   </div>
                   <div className="details">
                     <Table>
@@ -88,14 +86,14 @@ const CardsDetails = () => {
                                   : () => remove(ele)
                               }
                             >
-                              -
+                              <b>-</b>
                             </span>
                             <span style={{ fontSize: 24 }}>{ele.qnty}</span>
                             <span
                               style={{ fontSize: 24 }}
                               onClick={() => send(ele)}
                             >
-                              +
+                              <b>+</b>
                             </span>
                           </div>
                         </td>
@@ -135,7 +133,7 @@ const CardsDetails = () => {
                       </tr>
                     </Table>
                   </div>
-                </>
+                </div>
               );
             })}
           </div>
